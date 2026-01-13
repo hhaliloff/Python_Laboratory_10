@@ -1,5 +1,5 @@
 from based_way import integrate
-from streams import integrate_threaded
+from threads import integrate_threaded
 from processes import integrate_proc
 from Cython import integrate as integrate_cython
 import unittest
@@ -13,7 +13,7 @@ class TestMySolution(unittest.TestCase):
     self.assertAlmostEqual(integrate(square, 0, 100, n_iter=1000), 332833.5, delta= 0.001)
     self.assertAlmostEqual(integrate(square, 0, 100, n_iter=1000000), 333332.8333334973, delta=0.000001)
 
-  def test_streams(self):
+  def test_threads(self):
     self.assertAlmostEqual(integrate_threaded(square, 0, 100, n_iter=1000), 332833.5, delta= 0.001)
     self.assertAlmostEqual(integrate_threaded(square, 0, 100, n_iter=1000000), 333332.8333334973, delta=0.000001)
 

@@ -1,3 +1,7 @@
+import sys
+print("Executable:", sys.executable)
+print("Version:", sys.version)
+
 from concurrent.futures import ThreadPoolExecutor
 import math
 import timeit
@@ -51,5 +55,5 @@ def time_integrate(f):
     time3 = timeit.timeit(lambda: f(lambda x: x**2, 0, 10, n_iter=10**8), number = 3)
     return time1, time2, time3
 
-#print(time_integrate(integrate_threaded))
+print(time_integrate(integrate_threaded))
 
